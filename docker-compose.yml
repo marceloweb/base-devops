@@ -11,16 +11,9 @@ services:
       - jenkins-data:/var/jenkins_home/
       - /var/run/docker.sock:/var/run/docker.sock
   sonarqube:
-    image: sonarqube
+    image: sonarqube:lts
     ports:
       - "9000:9000"
-    volumes:
-      - sonarqube_conf:/opt/sonarqube/conf
-      - sonarqube_data:/opt/sonarqube/data
-      - sonarqube_extensions:/opt/sonarqube/extensions
 volumes:
   jenkins-data:
     driver: local
-  sonarqube_conf:
-  sonarqube_data:
-  sonarqube_extensions:
